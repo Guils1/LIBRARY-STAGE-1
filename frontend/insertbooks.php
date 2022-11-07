@@ -1,5 +1,6 @@
 <?php
-include_once("conexao.php");
+session_start();
+include_once("../backend/conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -8,15 +9,14 @@ include_once("conexao.php");
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Livros</title>
+    <title>Cadastro de Livros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-    <header>
+<header>
         <nav class="navbar navbar-expand-lg" id="nav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -32,18 +32,18 @@ include_once("conexao.php");
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <a class="nav-link" href="../index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="books.html ">Books</a>
+                            <a class="nav-link"  href="books.php ">Books</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle nav-link active" aria-current="page" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Insert
                             </a>
                             <ul class="dropdown-menu" id="ins">
-                                <li><a class="dropdown-item" href="insertbooks.php">Books</a></li>
+                                <li><a class="dropdown-item" href="#">Books</a></li>
                                 <li><a class="dropdown-item" href="#">Suppliers</a></li>
                                 <!-- <li>
                                     <hr class="dropdown-divider">
@@ -55,72 +55,50 @@ include_once("conexao.php");
                             <a class="nav-link disabled">Disabled</a>
                         </li> -->
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
-                                style="display: inline-block; vertical-align: text-bottom;">
-                                <path fill-rule="evenodd"
-                                    d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z">
-                                </path>
-                            </svg></button>
-                    </form>
+                    
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container-md mt-2">
-        <div class="row justify-content-center mt-4 mb-2">
-            <div class="col col-lg-12 mt-5">
-                <h1 style="text-align: center;">Livros</h1>
-                <?php
-                    $result_books = "SELECT * FROM books b left join authors a on b.id_=a.id;";
-                    $resultado_books = mysqli_query($conn, $result_books);
-                    while($row_books = mysqli_fetch_assoc($resultado_books)) {
-                        echo '<div class="card mb-3">
-                        <img src="' .$row_books["img"] .'" class="card-img-top" alt="..." style:" height=600em;">
-                        <div class="card-body">
-                            <h5 class="card-title">' .$row_books["name"] .'</h5>
-                            <p class="card-text">' .$row_books["descricao"] .'</p>
-                            <h6 class="card-title">Gênero:</h6>
-                            <h6 class="card-title">Autor:' .$row_books["name_a"] .'</h6>
-                            <h6 class="card-title">Ano de lançamento:'.$row_books["ano_lancamento"] .'</h6>
-
-                            <a href="edit.php?id='.$row_books["id_"].'"><button type="button" class="btn btn-success mt-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-pencil"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-                                </svg>
-                                </button></a>
-                                <a href="backend/del.php?id='.$row_books["id_"].'"><button type="button" class="btn btn-danger mt-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor"
-                                        class="bi bi-trash" viewBox="0 0 16 16">
-                                        <path
-                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                        <path fill-rule="evenodd"
-                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                    </svg>
-                                    
-                                </button></a>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    ';
-                    }
-                ?>
-                </div>
-            </div>
+    <main class="container-md mt-5">
+    <?php
+    if(isset($_SESSION['msg'])) {
+        echo $_SESSION['msg'];
+        unset ($_SESSION['msg']);
+    }
+    ?>  
+    <form action="backend/pro_insert.php" method="post">
+        <div class="mb-3">
+        <label for="" class="form-label">Nome do livro:</label>
+        <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome do livro">
         </div>
+        <div class="mb-3">
+        <label for="" class="form-label">Descrição:</label>
+        <textarea class="form-control" name="descricao" placeholder="Descrição do livro" id="descricao" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+        <label for="" class="form-label">Data de lançamento:</label>
+        <input type="text" class="form-control" name="data_lancamento" id="ano_lancamento" placeholder="Nome do livro">
+        </div>
+        <div class="mb-3">
+        <label for="" class="form-label">Imagem:</label>
+        <input type="file" class="form-control" name="img" id="ano_lancamento" placeholder="URL do livro">
+        </div>
+        
+        <button type="submit" class="btn btn-outline-success mt-3">Cadastrar</button>
+        </div>
+    </form>
+
+
     </main>
+
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 </body>
-
-
-
 <footer class="bg-dark text-center text-white mt-5">
         <!-- Grid container -->
         <div class="container p-4">
@@ -138,7 +116,6 @@ include_once("conexao.php");
             <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
             </svg><i class="fab fa-twitter"></i
         ></a>
-
         <!-- Instagram -->
         <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/guilhermevalerio_/" role="button"
             >
@@ -176,7 +153,3 @@ include_once("conexao.php");
     <a class="text-white" href="projects.guilhermevaleri.repl.co">Guilherme Valério</a> 
   </div>
 </footer>
-
-
-
-</html>

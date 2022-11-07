@@ -1,26 +1,23 @@
 <?php
-session_start();
-include_once("conexao.php");
-$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-$result_books = "SELECT * FROM books WHERE id_='$id'";
-$resultado_books = mysqli_query($conn, $result_books);
-$row_books = mysqli_fetch_assoc($resultado_books);
+include_once("../backend/conexao.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Livros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg" id="nav">
+
+    <header>
+        <nav class="navbar navbar-expand-lg" id="nav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
@@ -35,11 +32,10 @@ $row_books = mysqli_fetch_assoc($resultado_books);
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home</a>
+                            <a class="nav-link" href="../index.php">Home</a>
                         </li>
-                        
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="books.php ">Books</a>
+                            <a class="nav-link active" aria-current="page" href="books.html ">Books</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -74,39 +70,57 @@ $row_books = mysqli_fetch_assoc($resultado_books);
         </nav>
     </header>
 
-    <main class="container-md">
-    <h1 class="mt-3" style="text-align:center;">Livro: <?php echo $row_books['namea']; ?></h1>
-    <?php
-    if(isset($_SESSION['msg'])) {
-        echo $_SESSION['msg'];
-        unset ($_SESSION['msg']);
-    }
-    ?>   
-    <form action="backend/pro_edit.php?id=<?php echo $id; ?>" method="post">
-        <input type="hidden" name="id" value="<?php echo $row_books['id'];?>">
-        <label for="nome" class="form-label">Nome:</label>
-        <input type="text" name="nome" class="form-control" placeholder="Nome" value="<?php echo $row_books['nome'];?>" id="">
-        <br>
-        <br>
-        <label for="nome" class="form-label">Descrição:</label>
-        <input type="text" name="descricao" class="form-control" placeholder="descricao" value="<?php echo $row_books['descricao'];?>" id="">
-        <br>
-        <br>
-        <label for="nome" class="form-label">Ano de lançamento:</label>
-        <input type="text" name="data_lancamento" class="form-control" placeholder="ano_lancamento" value="<?php echo $row_books['ano_lancamento'];?>" id="">
-        <br>
-        <br>
-        <label for="" class="form-label">Link da imagem:</label>
-        <input type="file" name="img" class="form-control" placeholder="img" value="<?php echo $row_books['img'];?>" value="" id="">
-        <br>
-        <br>
-        <input type="submit" class="btn btn-success" value="Editar">
-    </form>
+    <main class="container-md mt-2">
+        <div class="row justify-content-center mt-4 mb-2">
+            <div class="col col-lg-12 mt-5">
+                <h1 style="text-align: center;">Livros</h1>
+                <?php
+                    $result_books = "SELECT * FROM books b left join authors a on b.id_=a.id;";
+                    $resultado_books = mysqli_query($conn, $result_books);
+                    while($row_books = mysqli_fetch_assoc($resultado_books)) {
+                        echo '<div class="card mb-3">
+                        <img src="' .$row_books["img"] .'" class="card-img-top" alt="..." style:" height=600em;">
+                        <div class="card-body">
+                            <h5 class="card-title">' .$row_books["name"] .'</h5>
+                            <p class="card-text">' .$row_books["descricao"] .'</p>
+                            <h6 class="card-title">Gênero:</h6>
+                            <h6 class="card-title">Autor:' .$row_books["name_a"] .'</h6>
+                            <h6 class="card-title">Ano de lançamento:'.$row_books["ano_lancamento"] .'</h6>
+
+                            <a href="edit.php?id='.$row_books["id_"].'"><button type="button" class="btn btn-success mt-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-pencil"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                                </svg>
+                                </button></a>
+                                <a href="backend/del.php?id='.$row_books["id_"].'"><button type="button" class="btn btn-danger mt-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor"
+                                        class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path
+                                            d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                    
+                                </button></a>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    ';
+                    }
+                ?>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 </body>
+
+
+
 <footer class="bg-dark text-center text-white mt-5">
         <!-- Grid container -->
         <div class="container p-4">
@@ -163,5 +177,6 @@ $row_books = mysqli_fetch_assoc($resultado_books);
   </div>
 </footer>
 
-</html>
 
+
+</html>

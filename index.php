@@ -31,7 +31,7 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="books.php ">Books</a>
+                            <a class="nav-link" href="frontend/books.php ">Books</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -39,7 +39,7 @@
                                 Insert
                             </a>
                             <ul class="dropdown-menu" id="ins">
-                                <li><a class="dropdown-item" href="insertbooks.php">Books</a></li>
+                                <li><a class="dropdown-item" href="frontend/insertbooks.php">Books</a></li>
                                 <li><a class="dropdown-item" href="#">Suppliers</a></li>
                                 <!-- <li>
                                     <hr class="dropdown-divider">
