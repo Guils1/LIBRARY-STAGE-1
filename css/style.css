@@ -1,0 +1,43 @@
+#nav {
+    background-color: #ECCE8E;
+}
+body{
+    background-color: #EDFBC1;
+}
+
+#ins {
+    background-color: #ECCE8E;
+}
+
+#seta {
+    color: black;
+    background-color: black;
+}
+#fr50 {
+    text-align: center;
+    font-size: 3.4em;
+}
+
+#subt {
+    text-align: left;
+    font-size: 1em;
+}
+
+#grimg {
+    width: 33.8em;
+    height: 40em;
+    border: 0.1px solid black;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+#img {
+    margin-top: 1em;
+    width: 45em;
+    height: 50em;
+}
+
+#epc {
+    background-color: #ECCE8E;
+
+}

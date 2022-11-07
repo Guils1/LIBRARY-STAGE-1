@@ -1,0 +1,23 @@
+php:
+  image: php:7.4-apache
+  container_name: meu-php
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - /home/guilhermevalerio_/Documents/biblioteca:/var/www/html
+  links:
+    - db
+
+db:
+  image: mysql:5.7
+  container_name: meu-mysql
+  ports:
+    - "3307:3306"
+  volumes:
+    - var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=1234
+
+
+
