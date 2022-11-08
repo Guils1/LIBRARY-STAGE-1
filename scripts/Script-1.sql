@@ -6,7 +6,6 @@ show tables;
 desc books;
 
 select * from books;
-UPDATE books SET name='A Culpa é Das Estrelas', descricao='Hazel Grace Lancaster e Augustus Waters são dois adolescentes que se conhecem em um grupo de apoio para pacientes com câncer. Por causa da doença, Hazel sempre descartou a ideia de se envolver amorosamente, mas acaba cedendo ao se apaixonar por Augustus. Juntos, eles viajam para Amsterdã, onde embarcam em uma jornada inesquecível.', data_lancamento = '5 de junho de 2014', img='' WHERE id=1;
 alter table books add img blob;
 
 insert into books (name, descricao, data_lancamento) values

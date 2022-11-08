@@ -11,165 +11,68 @@
 </head>
 
 <body>
-
     <header>
-        <nav class="navbar navbar-expand-lg" id="nav">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"></path>
-                      </svg>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="frontend/books.php ">Books</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Insert
-                            </a>
-                            <ul class="dropdown-menu" id="ins">
-                                <li><a class="dropdown-item" href="frontend/insertbooks.php">Books</a></li>
-                                <li><a class="dropdown-item" href="#">Suppliers</a></li>
-                                <!-- <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#"></a></li> -->
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
-                                style="display: inline-block; vertical-align: text-bottom;">
-                                <path fill-rule="evenodd"
-                                    d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z">
-                                </path>
-                            </svg></button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="container-md mt-2">
-        <div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://umlivropordia.com.br/wp-content/uploads/2022/08/1500x660-kindleUnlimited.jpeg"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://sm.ign.com/t/ign_it/screenshot/default/kindle-unlimited-over-one-million-ebooks-bookwall-desktop-15_hw21.1280.jpg"
-                        class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://gkpb.com.br/wp-content/uploads/2021/04/gkpb-kindle-unlimited.jpeg"
-                        class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" id="seta" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+    <nav class="navbar navbar-expand-lg" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"></path>
+                  </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" id="seta" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?v=books">Books</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Insert
+                        </a>
+                        <ul class="dropdown-menu" id="ins">
+                            <li><a class="dropdown-item" href="index.php?v=insertbooks">Books</a></li>
+                            <li><a class="dropdown-item" href="#">Suppliers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"
+                            style="display: inline-block; vertical-align: text-bottom;">
+                            <path fill-rule="evenodd"
+                                d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z">
+                            </path>
+                        </svg></button>
+                </form>
+            </div>
         </div>
-
-        <div class="row justify-content-center mt-4 mb-2">
-            <div class="col col-lg-12 mt-2">
-                <div class="alert alert-success" id="epc" role="alert">
-                    <h4 class="alert-heading" style="text-align: center;">Frases de incentivo à leitura que vão provar que para voar só é preciso
-                        ter imaginação!</h4>
-                    <hr>
-                    <p class="mb-0">Em meio a tantas tecnologias e informações, ter o hábito de ler se tornou algo raro
-                        e pouco valorizado por parte da nova geração. O que precisamos entender é que geralmente são os
-                        livros que alimentam a imaginação dos criadores dessas inovações. Selecionamos as mais
-                        inspiradoras frases de incentivo à leitura que, com certeza, vão despertar a sua criatividade.
-                        Confira!</p>
-                </div>
-            </div>
-
-
-            <!-- --------------Cards -->
-
-            <div class="card-group">
-                <div class="card">
-                    <img src="https://www.frasesdobem.com.br/wp-content/uploads/2020/11/se-existem.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Karyne Santiago</h5>
-                    <p class="card-text">Se existem tantos livros para ler, é porque ainda existe muita coisa para se aprender.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://www.frasesdobem.com.br/wp-content/uploads/2020/11/ler-e.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Karyne Santiago</h5>
-                    <p class="card-text">Ler é conhecer o mundo com a imaginação.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://www.frasesdobem.com.br/wp-content/uploads/2020/11/ler-um.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Karyne Santiago</h5>
-                    <p class="card-text">Ler um livro é nunca estar só.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                </div>
-
-                <!-- -------------------------- -->
-
-                <div class="card-group mt-3">
-                <div class="card">
-                    <img src="https://www.frasesdobem.com.br/wp-content/uploads/2020/11/a-leitura.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Karyne Santiago</h5>
-                    <p class="card-text">A leitura exercita o cérebro e acalma a alma.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://www.frasesdobem.com.br/wp-content/uploads/2020/11/doses-diarias.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Karyne Santiago</h5>
-                    <p class="card-text">Doses diárias de leitura rejuvenescem a alma.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://www.frasesdobem.com.br/wp-content/uploads/2020/11/quem-mal.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Karyne Santiago</h5>
-                    <p class="card-text">Quem mal lê, mal ouve, mal fala, mal vê.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-                </div>
-
-            <!-- --------------Cards -->
-
+    </nav>
+    </header>
+    <main>
+    <?php 
+        if($_GET['v'] == 'books'){
+            include_once('backend/conexao.php');
+            include_once('frontend/books.php');
+        }else if($_GET['v'] == 'insertbooks'){
+            include_once('backend/conexao.php');
+            include_once('frontend/insertbooks.php');
+        }else {
+            include_once('frontend/main.php');
+        }
+    ?>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
 </body>
 
 <footer class="bg-dark text-center text-white mt-5">
