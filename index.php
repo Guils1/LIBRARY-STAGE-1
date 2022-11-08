@@ -66,22 +66,20 @@ include_once("backend/conexao.php");
             </div>
         </nav>
     </header>
-    <main>
-                <?php 
-                    if($_GET['v'] == 'books'){
-                        include_once('backend/conexao.php');
-                        include_once('frontend/books.php');
-                    }else if($_GET['v'] == 'insertbooks'){
-                        include_once('backend/conexao.php');
-                        include_once('frontend/insertbooks.php');
-                    } else if($_GET['v'] == 'editbooks'){
-                        include_once('backend/conexao.php');
-                        include_once('frontend/edit.php');
-                    }
-                    else {
-                        include_once('frontend/main.php');
-                    }
-                ?>
+    <?php 
+        if($_GET['v'] == 'books'){
+            include_once('backend/conexao.php');
+            include_once('frontend/books.php');
+        }else if($_GET['v'] == 'insertbooks'){
+            include_once('backend/conexao.php');
+            include_once('frontend/insertbooks.php');
+        } else if($_GET['v'] == 'editbooks'){
+            include_once('backend/conexao.php');
+            include_once('frontend/edit.php');
+        }else {
+            include_once('frontend/main.php');
+        }
+        ?>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
