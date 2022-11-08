@@ -15,7 +15,7 @@ include_once("backend/conexao.php");
 </head>
 
 <body>
-
+    
     <header>
         <nav class="navbar navbar-expand-lg" id="nav">
             <div class="container-fluid">
@@ -66,6 +66,7 @@ include_once("backend/conexao.php");
             </div>
         </nav>
     </header>
+    <main>
                 <?php 
                     if($_GET['v'] == 'books'){
                         include_once('backend/conexao.php');
