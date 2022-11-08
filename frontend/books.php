@@ -1,21 +1,4 @@
-<?php
-include_once("backend/conexao.php");
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Livros</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-
-<body>
-    <main class="container-md mt-2">
+<main class="container-md mt-2">
         <div class="row justify-content-center mt-4 mb-2">
             <div class="col col-lg-12 mt-5">
                 <h1 style="text-align: center;">Livros</h1>
@@ -32,7 +15,7 @@ include_once("backend/conexao.php");
                             <h6 class="card-title">Autor:' .$row_books["name_a"] .'</h6>
                             <h6 class="card-title">Ano de lançamento:'.$row_books["ano_lancamento"] .'</h6>
 
-                            <a href="frontend/edit.php?id='.$row_books["id_"].'"><button type="button" class="btn btn-success mt-3">
+                            <a href="frontend/edit.php?v=editbooks&id='.$row_books["id_"].'"><button type="button" class="btn btn-success mt-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-pencil"
                             viewBox="0 0 16 16">
                             <path
@@ -55,15 +38,7 @@ include_once("backend/conexao.php");
                     ';
                     }
                 ?>
-                </div>
             </div>
         </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-</body>
-
-
-
-</html>
+    </div>
+</main>

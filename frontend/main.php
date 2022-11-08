@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
-<body>
-<body>
-
 <main class="container-md mt-2">
     <div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -111,23 +98,4 @@
                 </div>
             </div>
             </div>
-
-            <?php 
-                if($_GET['v'] == 'books'){
-                    include_once('backend/conexao.php');
-                    include_once('frontend/books.php');
-                }else if($_GET['v'] == 'insertbooks'){
-                    include_once('backend/conexao.php');
-                    include_once('frontend/insertbooks.php');
-                }else {
-                    include_once('index.php');
-                }
-            ?>
-
-        <!-- --------------Cards -->
 </main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-</body>
-</html>
