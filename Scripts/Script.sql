@@ -57,6 +57,9 @@ insert into customers (name) values
 ('Geraldo');
 
 SELECT * FROM books b left join authors a on b.id_=a.id;
+SELECT * FROM books;
+UPDATE books set name = "teste" where id_=13;
+UPDATE books SET name='teste', descricao='teste', data_lancamento = 'teste', img='teste' WHERE id_='2';
 
 show tables;
 desc authors;

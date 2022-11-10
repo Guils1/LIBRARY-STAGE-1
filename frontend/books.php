@@ -3,7 +3,7 @@
             <div class="col col-lg-12 mt-5">
                 <h1 style="text-align: center;">Livros</h1>
                 <?php
-                    $result_books = "SELECT * FROM books b left join authors a on b.id_=a.id;";
+                    $result_books = "SELECT * FROM books b left join authors a on b.id_=a.book_id;";
                     $resultado_books = mysqli_query($conn, $result_books);
                     while($row_books = mysqli_fetch_assoc($resultado_books)) {
                         echo '<div class="card mb-3">
@@ -32,7 +32,7 @@
                                     </svg>
                                     
                                 </button></a>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-muted">Modificado '.$row_books["insert_time"].'</small></p>
                         </div>
                     </div>
                     ';
