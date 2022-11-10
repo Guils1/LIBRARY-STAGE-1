@@ -12,10 +12,10 @@
                             <h5 class="card-title">' .$row_books["name"] .'</h5>
                             <p class="card-text">' .$row_books["descricao"] .'</p>
                             <h6 class="card-title">Gênero:</h6>
-                            <h6 class="card-title">Autor:' .$row_books["name_a"] .'</h6>
-                            <h6 class="card-title">Ano de lançamento:'.$row_books["ano_lancamento"] .'</h6>
+                            <h6 class="card-title">Autor: ' .$row_books["name_a"] .'</h6>
+                            <h6 class="card-title">Ano de lançamento: '.$row_books["data_lancamento"] .'</h6>
 
-                            <a href="frontend/edit.php?v=editbooks&id='.$row_books["id_"].'"><button type="button" class="btn btn-success mt-3">
+                            <a href="../index.php?page=edit&id='.$row_books["id_"].'"><button type="button" class="btn btn-success mt-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-pencil"
                             viewBox="0 0 16 16">
                             <path

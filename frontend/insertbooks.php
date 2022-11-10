@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
         <label for="" class="form-label">Imagem:</label>
-        <input type="file" class="form-control" name="img" id="ano_lancamento" placeholder="URL do livro">
+        <input type="url" class="form-control" name="img" id="ano_lancamento" placeholder="URL do livro">
         </div>
         
         <button type="submit" class="btn btn-outline-success mt-3">Cadastrar</button>

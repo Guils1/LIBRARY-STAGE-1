@@ -9,9 +9,9 @@ $resultado_usuario = mysqli_query($conn, $result_usuario);
 
 if(mysqli_affected_rows($conn)) {
      $_SESSION['msg'] = "<p style='color:#52AA5E':c>Cadastro editado com sucesso<p>";
-     header("Location: books.php");
+     header("Location: ../index.php?page=books");
 } else {
      $_SESSION['msg'] = "<p style='color:#DB222A':c>Cadastro não pôde ser realizado<p>";
-     header("Location: books.php");
+     header("Location: ../index.php?page=books");
 }
 ?>
