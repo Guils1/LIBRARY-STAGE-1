@@ -3,9 +3,9 @@ session_start();
 include_once("conexao.php");
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
-$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
-$descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
-$data_lancamento = filter_input(INPUT_POST, 'data_lancamento', FILTER_SANITIZE_STRING);
+$nome = filter_input(INPUT_POST, 'nome');
+$descricao = filter_input(INPUT_POST, 'descricao');
+$data_lancamento = filter_input(INPUT_POST, 'data_lancamento');
 $img = filter_input(INPUT_POST, 'img');
 
 $result_books = "UPDATE books SET name='$nome', descricao='$descricao', data_lancamento = '$data_lancamento', img='$img' WHERE id_='$id'";

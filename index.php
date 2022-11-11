@@ -61,25 +61,13 @@ include_once("backend/conexao.php");
         </nav>
     </header>
     <?php
-    if ($_GET['page'] == 'books') {
+
+    if (isset($_GET['page'])) {
         include_once('backend/conexao.php');
-        include_once('frontend/books.php');
-    } else if ($_GET['page'] == 'insertbooks') {
-        include_once('backend/conexao.php');
-        include_once('frontend/insertbooks.php');
-    } else if ($_GET['page'] == 'edit') {
-        include_once('backend/conexao.php');
-        include_once('frontend/edit.php');
+        include_once ('frontend/' . $_GET['page'] . '.php');
     } else {
         include_once('frontend/main.php');
     }
-
-    // if (isset($_GET['page'])) {
-    //     include_once('backend/conexao.php');
-    //     include_once ('frontend/' . $_GET['page'] . '.php');
-    // } else {
-    //     include_once('frontend/main.php');
-    // }
     ?>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
@@ -128,7 +116,7 @@ include_once("backend/conexao.php");
 
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2022 Copyright:
-        <a class="text-white" href="projects.guilhermevaleri.repl.co">Guilherme Valério</a>
+        <a class="text-white" href="#" style="text-decoration: none;">Guilherme Valério</a>
     </div>
 </footer>
 

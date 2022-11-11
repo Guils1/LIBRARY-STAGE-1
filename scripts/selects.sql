@@ -6,7 +6,11 @@ show tables;
 desc books;
 
 select * from books;
-alter table books add data_lancamento varchar(20);
+alter table books add column descricao text;
+alter table books add column data_lancamento varchar(20);
+alter table books add column img varchar(200);
+alter table books change id id_ int(10) unsigned auto_increment not null;
+alter table authors change name name_a varchar(100) null;
 
 insert into books (name, descricao, data_lancamento) values
 ('A culpa é das estrelas', 'Hazel Grace Lancaster e Augustus Waters são dois adolescentes que se conhecem em um grupo de apoio para pacientes com câncer. Por causa da doença, Hazel sempre descartou a ideia de se envolver amorosamente, mas acaba cedendo ao se apaixonar por Augustus. Juntos, eles viajam para Amsterdã, onde embarcam em uma jornada inesquecível.', '5 de junho de 2014	');

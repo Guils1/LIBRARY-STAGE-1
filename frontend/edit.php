@@ -32,5 +32,6 @@ $row_books = mysqli_fetch_assoc($resultado_books);
         <br>
         <br>
         <input type="submit" class="btn btn-success" value="Editar">
+        <a href="../index.php?page=books"> <button type="button" class="btn btn-danger">Voltar</button> </a>
     </form>
 </main>
